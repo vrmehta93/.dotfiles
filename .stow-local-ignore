@@ -1,0 +1,15 @@
+
+# Some of defaults from https://www.gnu.org/software/stow/manual/stow.html#Ignore-Lists
+\.git
+\.gitignore
+\.gitmodules
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+# Mine
+^env$

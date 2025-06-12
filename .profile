@@ -1,6 +1,6 @@
 
 # Aliases
-alias ll="pwd && ls -al"
+#alias ll="pwd && ls -al" #
 alias nv="nvim"
 alias vi="nvim"
 alias vim="nvim"
