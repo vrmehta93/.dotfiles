@@ -16,6 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
+# Installation instructions - https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -78,8 +79,34 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# NOTE - omz plugins - https://github.com/ohmyzsh/ohmyzsh/tree/master?tab=readme-ov-file#plugins
+#	List: fzf, zoxide (dep: fzf)
+# NOTE - 2 steps for installating "custom" software/plugins
+# 	1. Clone the repo in the .oh-my-zsh/custom/plugins folder
+# 	2. Add the name in "plugins" var below
+# zsh-completions - https://github.com/zsh-users/zsh-completions
+# 	- Only run first step of cloning the repo
+# zsh-syntax-highlighting - https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+# 	- Installation notes NOT accurate for omz
+# 	- Run this command: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+# zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions fzf zoxide)
 
+# Keybinding/shortcuts
+# ctrl + a - jump to start of prompt
+# ctrl + b - move backwards (character) through the prompt 
+# ctrl + d - delete character on the cursor
+# ctrl + f - accept suggestion OR move forward (character)
+# ctrl + e - jump to end of prompt
+# ctrl + h - delete character to the left of cursor
+# ctrl + k - delete everything to the right of cursor
+# ctrl + l - clear view/scrollback history and show current prompt
+# ctrl + n - newer history
+# ctrl + p - older history
+# ctrl + r - fuzzy finder on cli history
+# ctrl + t - toggle 2 characters to the left of cursor
+# ctrl + u - delete everything on prompt line
+# ctrl + w - delete word backwards
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
