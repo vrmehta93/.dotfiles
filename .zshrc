@@ -80,7 +80,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # NOTE - omz plugins - https://github.com/ohmyzsh/ohmyzsh/tree/master?tab=readme-ov-file#plugins
-#	List: fzf, zoxide (dep: fzf)
+#	TODO - Update .profile if necessary
+#	List: fzf, zoxide (dep: fzf), tmux
 # NOTE - 2 steps for installating "custom" software/plugins
 # 	1. Clone the repo in the .oh-my-zsh/custom/plugins folder
 # 	2. Add the name in "plugins" var below
@@ -90,7 +91,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # 	- Installation notes NOT accurate for omz
 # 	- Run this command: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 # zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions fzf zoxide)
+plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions fzf zoxide tmux)
 
 # Keybinding/shortcuts
 # ctrl + a - jump to start of prompt
@@ -143,3 +144,8 @@ source "$HOME/.profile"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Replace "z" (zoxide) with "cd"
+# To confirm, run "which cd"
+# Now, you can run "cd" and "cdi" instead of "z" and "zi"
+eval "$(zoxide init --cmd cd zsh)"

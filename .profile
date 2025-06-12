@@ -24,7 +24,10 @@ source "$HOME/.env"
 # List of commands to ensure are installed
 # rg = ripgrep
 # nvim = neovim
-REQUIRED_TOOLS=(nvim pyenv pipenv rg stow)
+REQUIRED_TOOLS=(nvim pyenv pipenv rg stow
+	# For omz plugins
+	fzf zoxide tmux
+)
 
 # Check for Homebrew
 if ! command -v brew &>/dev/null; then
