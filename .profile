@@ -15,6 +15,11 @@ alias gb="git branch"
 alias gsw="git switch"
 alias gswc="git switch -c"
 
+acp() {
+  git add -A # equivalent to --all
+  git commit -m "$1"
+  git push
+}
 # For "pip" - allow installations in user directory
 export PATH="$PATH:/Users/vishal/.local/bin"
 
