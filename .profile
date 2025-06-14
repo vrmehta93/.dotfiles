@@ -7,7 +7,7 @@ alias vim="nvim"
 
 ## Git aliases
 alias gst="git status"
-alias gas="git add . && git status"
+alias gas="git add --all && git status"
 alias gcm="git commit -m"
 alias gp="git push"
 alias gl="git pull"
