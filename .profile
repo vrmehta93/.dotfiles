@@ -17,6 +17,7 @@ alias gswc="git switch -c"
 
 acp() {
   git add -A # equivalent to --all
+  git status
   git commit -m "$1"
   git push
 }
