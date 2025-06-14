@@ -81,19 +81,18 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 # NOTE - omz plugins - https://github.com/ohmyzsh/ohmyzsh/tree/master?tab=readme-ov-file#plugins
 #	TODO - Update .profile if necessary
-#	List: fzf, zoxide (dep: fzf), tmux
+#	Special plugin notes: zoxide (dep: fzf), macos (only works in macos. And iTerm2 is supported)
 # NOTE - 2 steps for installating "custom" software/plugins
 # 	1. Clone the repo in the .oh-my-zsh/custom/plugins folder
 # 	2. Add the name in "plugins" var below
 # zsh-completions - https://github.com/zsh-users/zsh-completions
-# 	- Only run first step of cloning the repo
 # zsh-syntax-highlighting - https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 # 	- Installation notes NOT accurate for omz
 # 	- Run this command: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 # zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions fzf zoxide tmux)
+plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions fzf zoxide tmux copypath copyfile copybuffer jsontools macos)
 
-# Keybinding/shortcuts
+# Keybinding/shortcuts for prompt navigation
 # ctrl + a - jump to start of prompt
 # ctrl + b - move backwards (character) through the prompt 
 # ctrl + d - delete character on the cursor
