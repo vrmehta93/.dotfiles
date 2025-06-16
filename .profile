@@ -27,6 +27,10 @@ export PATH="$PATH:/Users/vishal/.local/bin"
 # Load env vars
 source "$HOME/.env"
 
+# Keyboard Mappings
+# Map `caps lock` key to ctrl key
+# For MacOS - System Settings > Keyboard > Keyboard Shortcuts... > Modifier keys
+
 # List of commands to ensure are installed
 # rg = ripgrep
 # nvim = neovim
