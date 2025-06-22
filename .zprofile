@@ -1,6 +1,7 @@
+# For Mac M1
 eval "$(/opt/homebrew/bin/brew shellenv)"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
-source "$HOME/.profile"
+#source "$HOME/.profile"

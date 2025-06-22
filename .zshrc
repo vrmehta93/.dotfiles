@@ -142,7 +142,7 @@ alias oc="open . -a iterm"
 source "$HOME/.profile"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.config/p10k/.p10k.zsh ]] || source ~/.config/p10k/.p10k.zsh 
 
 # Replace "z" (zoxide) with "cd"
 # To confirm, run "which cd"
