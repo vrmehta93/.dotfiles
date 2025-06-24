@@ -1,10 +1,15 @@
 
 # Aliases
-#alias ll="pwd && ls -al" #
+#alias ll="pwd && ls -al" # Use alias l
 alias nv="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+alias tr="tree -a -I '.git|.github|.DS_Store'"
+alias rgh="rg --hidden"
+rgl() {
+	rg --hidden --pretty "$1" | less
+}
 ## Git aliases
 alias gst="git status"
 alias gas="git add --all && git status"
@@ -34,7 +39,7 @@ source "$HOME/.env"
 # List of commands to ensure are installed
 # rg = ripgrep
 # nvim = neovim
-REQUIRED_TOOLS=(nvim pyenv pipenv rg stow
+REQUIRED_TOOLS=(nvim pyenv pipenv rg stow tree
 	# For omz plugins
 	fzf zoxide tmux
 )
