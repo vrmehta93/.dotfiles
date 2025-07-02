@@ -8,7 +8,7 @@ alias vim="nvim"
 alias tr="tree -a -I '.git|.github|.DS_Store'"
 alias rgh="rg --hidden"
 rgl() {
-	rg --hidden --pretty "$1" | less
+	rg --hidden --glob "!**/.git/*" --pretty "$1" | less
 }
 ## Git aliases
 alias gst="git status"
