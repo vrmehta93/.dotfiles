@@ -1,0 +1,11 @@
+# You need a .gitattributes file to specify which files need to use this filter
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = Vishal Mehta
+	# EDU account
+	# To access this setting: Github.com > Click top right icon/avatar > Settings > Emails
+	email = 6668870+vrmehta93@users.noreply.github.com
