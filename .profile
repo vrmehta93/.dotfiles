@@ -4,28 +4,19 @@
 alias nv="nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias nvr="nvim -R" # Read only mode
+
+alias g=git
 
 alias tr="tree -a -I '.git|.github|.DS_Store'"
 alias rgh="rg --hidden"
 rgl() {
 	rg --hidden --glob "!**/.git/*" --pretty "$1" | less
 }
-## Git aliases
-alias gst="git status"
-alias gas="git add --all && git status"
-alias gcm="git commit -m"
-alias gp="git push"
-alias gl="git pull"
-alias gb="git branch"
-alias gsw="git switch"
-alias gswc="git switch -c"
 
-acp() {
-  git add -A # equivalent to --all
-  git status
-  git commit -m "$1"
-  git push
-}
+mkcd () { mkdir "$@" && cd "$@"; }
+
+
 # For "pip" - allow installations in user directory
 export PATH="$PATH:/Users/vishal/.local/bin"
 
@@ -39,6 +30,7 @@ source "$HOME/.env"
 # List of commands to ensure are installed
 # rg = ripgrep
 # nvim = neovim
+# fzf = fuzzy finder
 REQUIRED_TOOLS=(nvim pyenv pipenv rg stow tree
 	# For omz plugins
 	fzf zoxide tmux
