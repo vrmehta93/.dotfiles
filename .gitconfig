@@ -10,14 +10,17 @@
 	# To access this setting: Github.com > Click top right icon/avatar > Settings > Emails
 	email = 6668870+vrmehta93@users.noreply.github.com
 [alias]
+    d = diff
+    aa = add --all
     st = status
     as = !git add --all && git status
     cm = commit -m
     p = push
+    po = push origin
     l = pull
+    c = clone
     b = branch
     sw = switch
     swc = switch -c
-    cp = !git commit -m \"$1\" && git push
-    acp = !git add -A && git status && git commit -m \"$1\" && git push
-
+    cp = !git commit -m $1 && git push && :
+    acp = !git add -A && git commit -m $1 && git push && :
