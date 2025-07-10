@@ -22,5 +22,5 @@
     b = branch
     sw = switch
     swc = switch -c
-    cp = !git commit -m $1 && git push && :
-    acp = !git add -A && git commit -m $1 && git push && :
+    cp = "!f() { git commit -m \"$1\" && git push; }; f"
+    acp = "!f() { git add -A && git commit -m \"$1\" && git push; }; f"
