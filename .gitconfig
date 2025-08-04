@@ -18,6 +18,7 @@
     p = push
     po = push origin
     l = pull
+    la = "!source ~/.profile; git config list | rgl alias"  # Sourcing .profile since ! runs in non-interactive shell
     c = clone
     b = branch
     sw = switch
