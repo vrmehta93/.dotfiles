@@ -79,10 +79,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# NOTE - omz plugins - https://github.com/ohmyzsh/ohmyzsh/tree/master?tab=readme-ov-file#plugins
-#	TODO - Update .profile if necessary
+# NOTE: omz plugins - https://github.com/ohmyzsh/ohmyzsh/tree/master?tab=readme-ov-file#plugins
+#	TODO: Update .profile if necessary
 #	Special plugin notes: zoxide (dep: fzf), macos (only works in macos. And iTerm2 is supported)
-# NOTE - 2 steps for installating "custom" software/plugins
+# NOTE: 2 steps for installating "custom" software/plugins
 # 	1. Clone the repo in the .oh-my-zsh/custom/plugins folder
 # 	2. Add the name in "plugins" var below
 # zsh-completions - https://github.com/zsh-users/zsh-completions
@@ -92,21 +92,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions fzf zoxide tmux copypath copyfile copybuffer jsontools macos)
 
-# Keybinding/shortcuts for prompt navigation
-# ctrl + a - jump to start of prompt
-# ctrl + b - move backwards (character) through the prompt 
-# ctrl + d - delete character on the cursor
-# ctrl + f - accept suggestion OR move forward (character)
-# ctrl + e - jump to end of prompt
-# ctrl + h - delete character to the left of cursor
-# ctrl + k - delete everything to the right of cursor
-# ctrl + l - clear view/scrollback history and show current prompt
-# ctrl + n - newer history
-# ctrl + p - older history
-# ctrl + r - fuzzy finder on cli history
-# ctrl + t - toggle 2 characters to the left of cursor
-# ctrl + u - delete everything on prompt line
-# ctrl + w - delete word backwards
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

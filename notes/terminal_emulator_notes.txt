@@ -1,0 +1,22 @@
+
+
+Keybinding/shortcuts for prompt navigation
+ctrl + a - jump to start of prompt
+ctrl + b - move backwards (character) through the prompt 
+ctrl + d - delete character on the cursor
+ctrl + f - accept suggestion OR move forward (character)
+ctrl + e - jump to end of prompt
+ctrl + h - delete character to the left of cursor
+ctrl + k - delete everything to the right of cursor
+ctrl + l - clear view/scrollback history and show current prompt
+ctrl + n - newer history
+ctrl + p - older history
+ctrl + r - fuzzy finder on cli history
+ctrl + t - toggle 2 characters to the left of cursor
+ctrl + u - delete everything on prompt line
+ctrl + w - delete word backwards
+
+Keyboard Mappings
+Map `caps lock` key to ctrl key
+For MacOS - System Settings > Keyboard > Keyboard Shortcuts... > Modifier keys
+

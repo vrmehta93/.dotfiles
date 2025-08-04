@@ -10,7 +10,7 @@ alias g=git
 
 alias tr="tree -a -I '.git|.github|.DS_Store'"
 alias rgh="rg --hidden"
-rgl() {
+rgl() { # NOTE - This is used in .gitconfig
 	rg --hidden --glob "!**/.git/*" --pretty "$1" | less
 }
 
@@ -22,10 +22,6 @@ export PATH="$PATH:/Users/vishal/.local/bin"
 
 # Load env vars
 source "$HOME/.env"
-
-# Keyboard Mappings
-# Map `caps lock` key to ctrl key
-# For MacOS - System Settings > Keyboard > Keyboard Shortcuts... > Modifier keys
 
 # List of commands to ensure are installed
 # rg = ripgrep
