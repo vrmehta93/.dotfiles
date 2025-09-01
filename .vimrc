@@ -119,9 +119,12 @@ syntax on
 " 	Create dir - ~/.vim/pack/<vendor>/start
 " 	Download repo as zip, unzip, move folder under "start" dir
 " 	To access help docs, add helptags ~/.vim/pack/<vendor>/start/<plugin>/doc
+" 	Binary installation in this folder - ~/bin/ OR ~/.local/bin
+" 		Add bin folder location to PATH
 call plug#begin()
 
 " List your plugins here
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-vinegar'
@@ -140,6 +143,12 @@ Plug 'hashivim/vim-terraform'
 
 " NOTE: Download 'fzf' and 'rg'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" For fzf.vim manual installation, if you run :RG, apple might complain saying Apple is being sure rg binary being free of malware
+" 	That's because if you run "ls -l@ ~/bin/rg" (assuming manual download
+" 	of rg binary), if you see "com.apple.quarantine"
+" 	Then run "xattr -d com.apple.quarantine ~/bin/rg". That should remove
+" 	that attribute
+" 	Run ls command again to verify
 Plug 'junegunn/fzf.vim'
 " set rtp+=~/.fzf	" For manual installation. See https://github.com/junegunn/fzf/blob/master/README-VIM.md
 Plug '/opt/homebrew/opt/fzf'

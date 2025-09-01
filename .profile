@@ -18,7 +18,7 @@ alias cdf='cd "$(find . -maxdepth 1 -type d | fzf)"'
 mkcd () { mkdir "$@" && cd "$@"; }
 
 
-# For "pip" - allow installations in user directory
+# For manual installation of binaries
 export PATH="$PATH:/Users/vishal/.local/bin"
 
 # Load env vars
