@@ -2,8 +2,8 @@
 # Aliases
 #alias ll="pwd && ls -al" # Use alias l
 alias nv="nvim"
-alias vi="nvim"
-alias vim="nvim"
+# alias vi="nvim"
+# alias vim="nvim"
 alias nvr="nvim -R" # Read only mode
 
 alias g=git
@@ -13,7 +13,8 @@ alias rgh="rg --hidden"
 rgl() { # NOTE - This is used in .gitconfig
 	rg --hidden --glob "!**/.git/*" --pretty "$1" | less
 }
-
+alias lsf="ls -a | fzf"
+alias cdf='cd "$(find . -maxdepth 1 -type d | fzf)"'
 mkcd () { mkdir "$@" && cd "$@"; }
 
 

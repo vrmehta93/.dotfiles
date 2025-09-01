@@ -1,8 +1,10 @@
 
-
+# MacOS
 Keybinding/shortcuts for prompt navigation
+https://support.apple.com/en-gb/guide/terminal/trmlshtcts/mac
 ctrl + a - jump to start of prompt
 ctrl + b - move backwards (character) through the prompt 
+	NOTE: tmux overwrite - press twice
 ctrl + d - delete character on the cursor
 ctrl + f - accept suggestion OR move forward (character)
 ctrl + e - jump to end of prompt
@@ -11,12 +13,27 @@ ctrl + k - delete everything to the right of cursor
 ctrl + l - clear view/scrollback history and show current prompt
 ctrl + n - newer history
 ctrl + p - older history
-ctrl + r - fuzzy finder on cli history
+ctrl + r - Reverse search command history
+	NOTE: omz's "fzf" plugin overwrite - fuzzy finder on cli history
 ctrl + t - toggle 2 characters to the left of cursor
+	NOTE: omz's "fzf" plugin overwrite - file picker overwrites this mapping
 ctrl + u - delete everything on prompt line
 ctrl + w - delete word backwards
 
-Keyboard Mappings
+
+Useful commands
+!! - re-run last command
+!{+/- number} - re-run command from history
+	e.g. !4 (4th oldest command), !-2 (2nd most recent command)
+!{letters} - re-run command that starts with letters specified
+^{old}^{new} - re-run last command but replace old with new
+~ - home directory
+"-" - go back to previous directory
+
+## Keyboard Mappings
 Map `caps lock` key to ctrl key
 For MacOS - System Settings > Keyboard > Keyboard Shortcuts... > Modifier keys
 
+## iTerm2
+in iTerm2 (macOS), Go to Profiles > Edit Profile > Keys tab > General tab > For "Left/Right option key", set value to "Esc+" from "Normal"
+For hotkey - Settings > Keys tab > Hotkey sub tab > Select checkbox “App hotkey: Show/hide all windows with a system-wide hotkey”
