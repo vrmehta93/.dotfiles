@@ -153,7 +153,7 @@ Plug 'junegunn/fzf.vim'
 " set rtp+=~/.fzf	" For manual installation. See https://github.com/junegunn/fzf/blob/master/README-VIM.md
 Plug '/opt/homebrew/opt/fzf'
 
-Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'	" To go with coc-snippets
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree'
@@ -161,6 +161,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
+" Auto-install coc-extensions
 autocmd User PlugInstallPost,PlugUpdatePost :CocUpdate
 
 " Enable filetype detection, plugins and indentation
