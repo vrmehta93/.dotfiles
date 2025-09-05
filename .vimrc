@@ -23,7 +23,7 @@ set ignorecase
 set smartcase
 set signcolumn=yes
 set updatetime=250
-set timeoutlen=300
+"set timeoutlen=300
 set splitright
 set splitbelow
 set list
@@ -46,7 +46,7 @@ nnoremap <C-S-k> <C-w>K
 nnoremap <M-,> :resize -5<CR> " <Option-l>
 nnoremap <M-.> :resize +5<CR> " <option-r>
 nnoremap <C-t> :vertical resize +5<CR>
-nnoremap <C-x> :vertical resize -5<CR>
+nnoremap <C-c> :vertical resize -5<CR>
 
 " Custom mappings
 nnoremap <leader>o o<Esc>
@@ -200,6 +200,7 @@ let g:python_highlight_all=1
 " highlight CocFloatActive ctermbg=none ctermfg=magenta
 " highlight CocFloatDividingLine ctermbg=none ctermfg=red
 " highlight CocFloatSbar ctermbg=none ctermfg=white
+" highlight CocUnusedHighlight ctermbg=none ctermfg=gray
 
 " from https://github.com/neoclide/coc.nvim/tree/release?tab=readme-ov-file
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
@@ -329,7 +330,11 @@ nnoremap <leader>s. :History<CR>
 nnoremap <leader><leader> :Buffers<CR>
 nnoremap <leader>sc :Commands<CR>
 nnoremap <leader>s/ :Lines<CR>
+nnoremap <leader>sm :vs ~/.vimrc<CR>:BLines<CR>
 nnoremap <C-p> :GFiles<CR>
+" NOTE: Create fzf-history directory. Use <C-j/k> to select search results and
+" <C-n/p> to navigate through history
+let g:fzf_history_dir='~/.vim/fzf-history'
 
 " undotree
 " helptags ~/.vim/pack/mbbill/start/undotree-master/doc
@@ -337,10 +342,11 @@ nnoremap <F5> :UndotreeToggle<CR>
 
 " vim-easymotion
 " helptags ~/.vim/pack/easymotion/start/vim-easymotion-master/doc
-map  <leader>mf <Plug>(easymotion-bd-f)
-nmap <leader>mf <Plug>(easymotion-overwin-f)
-map  <leader>mw <Plug>(easymotion-bd-w)
-nmap <leader>mw <Plug>(easymotion-overwin-w)
+nmap m <Plug>(easymotion-prefix)
+"map  <leader>mf <Plug>(easymotion-bd-f)
+"nmap <leader>mf <Plug>(easymotion-overwin-f)
+"nmap <leader>mw <Plug>(easymotion-overwin-w)
+"map  <leader>mw <Plug>(easymotion-bd-w)
 
 " Other plugins
 " helptags ~/.vim/pack/vim-airline/start/vim-airline-master/doc
