@@ -1,0 +1,13 @@
+
+<c-b> - tmux default leader key
+
+All tmux commands include prepending with leader key
+Common keybindings:
+d - detach from current session
+c - create new session
+n/p - switch to next/previous window
+% - split vertically
+" - split horizontally
+x - kill current pane
+? - display list of all keybindings
+
