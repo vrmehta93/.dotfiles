@@ -81,16 +81,35 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 # NOTE: omz plugins - https://github.com/ohmyzsh/ohmyzsh/tree/master?tab=readme-ov-file#plugins
 #	TODO: Update .profile if necessary
-#	Special plugin notes: zoxide (dep: fzf), macos (only works in macos. And iTerm2 is supported)
-# NOTE: 2 steps for installating "custom" software/plugins
-# 	1. Clone the repo in the .oh-my-zsh/custom/plugins folder
-# 	2. Add the name in "plugins" var below
-# zsh-completions - https://github.com/zsh-users/zsh-completions
-# zsh-syntax-highlighting - https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-# 	- Installation notes NOT accurate for omz
-# 	- Run this command: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+#	Special plugin notes:
+#	  jsontools (dep: node or python3 or ruby)
+#	  macos (only works in macos. And iTerm2 is supported)
+#	  zoxide (dep: fzf)
+# NOTE: Custom plugins (not part of omz plugins). Read each plugin's docs for installation instructions
 # zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-plugins=(git zsh-completions zsh-syntax-highlighting zsh-autosuggestions fzf zoxide tmux copypath copyfile copybuffer jsontools macos)
+# zsh-syntax-highlighting - https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+plugins=(aliases # Show aliases by group using "als" command
+        common-aliases # More aliases
+        copypath # "copypath" command to copy the absolute path of dir/file
+        copyfile # "copyfile" command to copy the contents of file to clipboard
+        copybuffer # <C-o> keybinding to copy current text in CLI to clipboard
+        dircycle # Navigate directories with <C-S-Left> and <C-S-Right>
+        fancy-ctrl-z # <C-z> to switch back to background job
+        fzf
+        gh # Github CLI completion
+        git # Git aliases and functions
+        jsontools # Functions to deal with json e.g. pp_json, is_json, etc
+        last-working-dir # Launch with shells from last working directory. TODO: Test whether this is helpful
+        macos # Provides commands e.g. "tab" for new tab in current directory, "ofd" to open current directory in finder
+        pip # Completion and aliases for pip
+        pipenv # Completion and aliases for pipenv
+        python # Python aliases e.g. "py" for python3, "mkv" to create virtual environment, "vrun" to activate venv
+        tmux # Tmux aliases e.g. "ta" to attach, "tad" to detach, "ts" for new session
+        zoxide # "cd" alternative
+        # Custom plugins
+        zsh-autosuggestions # Suggests commands as you type based on history and completions
+        zsh-syntax-highlighting # Highlight as you type
+      )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,15 +117,18 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Display man pages in neovim
+export MANPAGER='nvim +Man!'
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"

@@ -10,23 +10,10 @@
 	# To access this setting: Github.com > Click top right icon/avatar > Settings > Emails
 	email = 6668870+vrmehta93@users.noreply.github.com
 [alias]
-    d = diff
-    aa = add --all
-    st = status
     as = !git add --all && git status
-    cm = commit -m
-    p = push
-    po = push origin
-    l = pull
-    la = "!source ~/.profile; git config list | rgl alias"  # Sourcing .profile since ! runs in non-interactive shell
-    c = clone
-    b = branch
-    sw = switch
-    swc = switch -c
+    la = "!source ~/.profile; git config list | rgl alias"  # Sourcing .profile since "!" runs in non-interactive shell
     cp = "!f() { git commit -m \"$1\" && git push; }; f"
     acp = "!f() { git add -A && git status && git commit -m \"$1\" && git push; }; f"
-    lg = log
-    lgo = log --oneline
     # Show msg, committer, numstat and files in commit
     lg1 = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     # Show graph format - date, msg and committer

@@ -1,24 +1,44 @@
 
+GNU readline/zle (zsh line editor) - single line editing in terminal (where you enter commands)
+	NOTE - readline is a library. zle is not a library. It's the actual editor
+		ZLE is a reimplementation of readline
+	Default keybindings are loosely based on emac. Similar concept if you use any vim modes
+		I'll stick to using emacs mode since it's default and I don't want to confuse/conflict vim behavior
+	For readline, You can create a ".inputrc" to create your customizations
+	"man zshzle"
+
 # MacOS
 Keybinding/shortcuts for prompt navigation
 https://support.apple.com/en-gb/guide/terminal/trmlshtcts/mac
-ctrl + a - jump to start of prompt
-ctrl + b - move backwards (character) through the prompt 
+<C-a> - jump to start of prompt
+<C-b> - move backwards (character) through the prompt 
 	NOTE: tmux overwrite - press twice
-ctrl + d - delete character on the cursor
-ctrl + f - accept suggestion OR move forward (character)
-ctrl + e - jump to end of prompt
-ctrl + h - delete character to the left of cursor
-ctrl + k - delete everything to the right of cursor
-ctrl + l - clear view/scrollback history and show current prompt
-ctrl + n - newer history
-ctrl + p - older history
-ctrl + r - Reverse search command history
-	NOTE: omz's "fzf" plugin overwrite - fuzzy finder on cli history
-ctrl + t - toggle 2 characters to the left of cursor
-	NOTE: omz's "fzf" plugin overwrite - file picker overwrites this mapping
-ctrl + u - delete everything on prompt line
-ctrl + w - delete word backwards
+<C-d> - delete character on the cursor
+<C-f> - accept suggestion OR move forward (character)
+<C-e> - jump to end of prompt
+<C-h> - delete character to the left of cursor
+<C-k> - delete everything to the right of cursor
+<C-l> - clear view/scrollback history and show current prompt
+<C-n> - newer history
+<C-p> - older history
+<C-r> - Reverse search command history
+	NOTE: "fzf" overwrite - fuzzy finder on cli history
+<C-t> - toggle 2 characters to the left of cursor
+	NOTE: "fzf" overwrite - file picker overwrites this mapping
+<C-u> - delete everything on prompt line
+<C-w> - delete word backwards
+<C-y> - Paste "yanked" text
+<C-o> - omz "copybuffer" plugin to copy current text in CLI to clipboard
+<C-S-Left/Right/Up/Down> - omz "dircycle" plugin to navigate directories
+<C-x><C-e> - load commands in $EDITOR
+<M-t> - swap last 2 arguments
+<M-_> (i.e shift + -)- get last argument from previous command
+<M-{n}><M-_> - get the nth parameter from the back of the previous command
+	e.g. <M-2><M-_> - gets the 2nd last parameter of the previous command
+<M-h> - man page for current command mid-command
+<M-l> - run "ls" command
+<M-c> - "fzf" run cd mid-command
+
 
 
 Useful commands
@@ -29,6 +49,20 @@ Useful commands
 ^{old}^{new} - re-run last command but replace old with new
 ~ - home directory
 "-" - go back to previous directory
+History expansion
+	!:0 - command name
+	!:{n} - nth argument
+	!:$ - last argument
+
+## Debug
+bindkey -L | sort - Show every binding in a nice table
+bindkey -M emacs - find which keys call which widget
+	e.g. bindkey -M emacs | grep fzf-file-widget
+zle -l | sort - See all registered widgets
+cat -v - debug raw keyboard input
+<Esc-x> - Run "execute-named-cmd" widget for testing a widget directly in shell
+	e.g. <Esc-x>insert-last-word
+
 
 ## Keyboard Mappings
 Map `caps lock` key to ctrl key
@@ -36,4 +70,4 @@ For MacOS - System Settings > Keyboard > Keyboard Shortcuts... > Modifier keys
 
 ## iTerm2
 in iTerm2 (macOS), Go to Profiles > Edit Profile > Keys tab > General tab > For "Left/Right option key", set value to "Esc+" from "Normal"
-For hotkey - Settings > Keys tab > Hotkey sub tab > Select checkbox “App hotkey: Show/hide all windows with a system-wide hotkey”
+For hotkey - From Menu bar > iTerm2 > Settings > Keys tab > Hotkey sub tab > Select checkbox “App hotkey: Show/hide all windows with a system-wide hotkey”

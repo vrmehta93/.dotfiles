@@ -28,6 +28,10 @@ source "$HOME/.env"
 # rg = ripgrep
 # nvim = neovim
 # fzf = fuzzy finder
+#   Keybindings: https://github.com/junegunn/fzf?tab=readme-ov-file#key-bindings-for-command-line
+#     <C-t> - fuzzy search files and directories
+#     <C-r> - fuzzy search CLI history
+#     <M-c> - cd into a directory
 REQUIRED_TOOLS=(nvim pyenv pipenv rg stow tree
 	# For omz plugins
 	fzf zoxide tmux
