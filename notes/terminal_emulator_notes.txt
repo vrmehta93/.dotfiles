@@ -71,3 +71,45 @@ For MacOS - System Settings > Keyboard > Keyboard Shortcuts... > Modifier keys
 ## iTerm2
 in iTerm2 (macOS), Go to Profiles > Edit Profile > Keys tab > General tab > For "Left/Right option key", set value to "Esc+" from "Normal"
 For hotkey - From Menu bar > iTerm2 > Settings > Keys tab > Hotkey sub tab > Select checkbox “App hotkey: Show/hide all windows with a system-wide hotkey”
+
+## CLI Tools/Utilities
+jq
+	For dealing with JSON
+	jq . <input file>
+		"." references the entire object
+		Output is color coded JSON
+	jq '.<key>' <input file>
+		Only show relevant object
+	jq '.<array key>[<num>]' <input file>
+		Show <num> element in array
+		You can also specify a range using ":" e.g. [0:2]
+	jq '.<array key>[].<key>' <input file>
+		Gets a specific attribute from all array elements
+	-r flag to omit quotes in output
+	<json data> | jq
+		Alternative way to pass data to jq
+		Also can be used this way where the output of some command is also JSON
+	jq '.<filter> | {new_key: <reference>}'
+		You can create a new JSON object from the object that was passed
+	Other built-in operators
+		length
+		select - value based filter
+		del - remove key
+	jq --arg n "<text>" '.<filter> | select (.<key> == $n)' <input file>
+		Set arguments that can be referenced in the query
+	jq keys <file> OR jq '.<filter> | keys' <file>
+		List keys
+	jq 'has("<key>")' <file>
+		Check if the key exists
+curl
+	Newer versions more user friendly
+	--get
+	-i gets headers of response and the response
+	-I gets headers of response without the response
+	-v verbose
+	--head
+	--location Follow if the domain has been moved (redirect)
+	-O download file (alternative to wget)
+
+
+
