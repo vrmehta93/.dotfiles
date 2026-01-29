@@ -17,6 +17,7 @@ alias lsf="ls -a | fzf"
 alias cdf='cd "$(find . -maxdepth 1 -type d | fzf)"'
 mkcd () { mkdir "$@" && cd "$@"; }
 
+alias vimgolf="docker run --rm -it -e 'key=$VIM_GOLF_KEY' ghcr.io/filbranden/vimgolf"
 
 # For manual installation of binaries
 export PATH="$PATH:/Users/vishal/.local/bin"

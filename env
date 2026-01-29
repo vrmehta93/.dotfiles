@@ -1,3 +1,4 @@
 # TODO - create .env file and add keys in that file
 # Environment variables for computer
 export OPENAI_API_KEY=
+export VIM_GOLF_KEY=
