@@ -3,12 +3,19 @@ source "$HOME/.env"
 
 # Cross Desktop Group env vars
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# Remove clutter from $HOME
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
+
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
 # Aliases
-#alias ll="pwd && ls -al" # Use alias l
 alias nv="nvim"
-# alias vi="nvim"
-# alias vim="nvim"
 alias nvr="nvim -R" # Read only mode
 
 alias tr="tree -a -I '.git|.github|.DS_Store'"

@@ -144,9 +144,9 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias oc="open . -a iterm"
 
 source "$HOME/.profile"
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/p10k/.p10k.zsh ]] || source ~/.config/p10k/.p10k.zsh 
