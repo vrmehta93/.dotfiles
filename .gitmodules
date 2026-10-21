@@ -1,7 +1,7 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = https://github.com/vrmehta93/kickstart.nvim.git
-	branch = master
+	url = https://github.com/vrmehta93/nvim_lazyvim.git
+	branch = main
 [submodule "notes/vim-cheatsheet"]
 	path = notes/vim-cheatsheet
 	url = https://github.com/ibhagwan/vim-cheatsheet.git

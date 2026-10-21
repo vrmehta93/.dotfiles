@@ -1,3 +1,8 @@
+# Load env vars
+source "$HOME/.env"
+
+# Cross Desktop Group env vars
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
 #alias ll="pwd && ls -al" # Use alias l
@@ -6,24 +11,19 @@ alias nv="nvim"
 # alias vim="nvim"
 alias nvr="nvim -R" # Read only mode
 
-alias g=git
-
 alias tr="tree -a -I '.git|.github|.DS_Store'"
 alias rgh="rg --hidden"
 rgl() { # NOTE - This is used in .gitconfig
-	rg --hidden --glob "!**/.git/*" --pretty "$1" | less
+  rg --hidden --glob "!**/.git/*" --pretty "$1" | less
 }
 alias lsf="ls -a | fzf"
 alias cdf='cd "$(find . -maxdepth 1 -type d | fzf)"'
-mkcd () { mkdir "$@" && cd "$@"; }
+mkcd() { mkdir "$@" && cd "$@"; }
 
 alias vimgolf="docker run --rm -it -e 'key=$VIM_GOLF_KEY' ghcr.io/filbranden/vimgolf"
 
 # For manual installation of binaries
 export PATH="$PATH:/Users/vishal/.local/bin"
-
-# Load env vars
-source "$HOME/.env"
 
 # List of commands to ensure are installed
 # rg = ripgrep
@@ -33,9 +33,9 @@ source "$HOME/.env"
 #     <C-t> - fuzzy search files and directories
 #     <C-r> - fuzzy search CLI history
 #     <M-c> - cd into a directory
-REQUIRED_TOOLS=(nvim pyenv pipenv rg stow tree
-	# For omz plugins
-	fzf zoxide tmux
+REQUIRED_TOOLS=(nvim pyenv pipenv rg stow tree lazygit hunk
+  # For omz plugins
+  fzf zoxide tmux
 )
 
 # Check for Homebrew

@@ -1,0 +1,5 @@
+# Ghostty config docs - https://ghostty.org/docs/config
+
+# Reload config shortcut - Ctrl (or Cmd) + Shift + ,
+font-size = 16
+background = 000000
