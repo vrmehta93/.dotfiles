@@ -95,7 +95,7 @@ plugins=(aliases # Show aliases by group using "als" command
         copybuffer # <C-o> keybinding to copy current text in CLI to clipboard
         dircycle # Navigate directories with <C-S-Left> and <C-S-Right>
         fancy-ctrl-z # <C-z> to switch back to background job
-        fzf
+        fzf # Enables fzf keybindings (<C-t>, <C-r>, <M-c>)
         gh # Github CLI completion
         git # Git aliases and functions
         jsontools # Functions to deal with json e.g. pp_json, is_json, etc

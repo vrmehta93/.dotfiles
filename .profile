@@ -36,13 +36,15 @@ export PATH="$PATH:/Users/vishal/.local/bin"
 # rg = ripgrep
 # nvim = neovim
 # fzf = fuzzy finder
-#   Keybindings: https://github.com/junegunn/fzf?tab=readme-ov-file#key-bindings-for-command-line
+#   Keybindings (enabled via omz plugin): https://github.com/junegunn/fzf?tab=readme-ov-file#key-bindings-for-command-line
 #     <C-t> - fuzzy search files and directories
 #     <C-r> - fuzzy search CLI history
 #     <M-c> - cd into a directory
 REQUIRED_TOOLS=(nvim pyenv pipenv rg stow tree lazygit hunk
   # For omz plugins
   fzf zoxide tmux
+  # For neovim (lazyvim)
+  fd
 )
 
 # Check for Homebrew
