@@ -58,6 +58,47 @@ rgl() { # NOTE - This is used in git config
 
 alias lsf="ls -a | fzf"
 
+# zmcs: print zsh's built-in default emacs keybindings.
+#
+# Runs a separate zsh with -f (skip all startup files) so the output shows
+# the stock defaults, not your own bindings. Does not change your session.
+# And -c tells zsh to run the next argument as a command string and then exit,
+# instead of starting an interactive shell and waiting for input.
+#
+# How to read the output ("keys" widget-name):
+#   ^X        Ctrl+X. ^A = Ctrl-A, ^K = Ctrl-K, and so on.
+#   ^[        Escape. "^[b" = Esc then b, which is the same as Alt-b
+#             on terminals where Alt sends Escape.
+#   ^@        Ctrl-Space (the NUL character).
+#   ^?        Delete (ASCII 127); most terminals send this for Backspace.
+#   ^H        Ctrl-H (ASCII 8); some terminals send this for Backspace.
+#   ^I        Tab.
+#   ^J, ^M    Newline and carriage return (Enter sends ^M).
+#   ^_        Ctrl-underscore (often what Ctrl-/ sends).
+#   \M-x      Meta+x (the character with the 8th bit set).
+#   \" and \$ Backslash escapes added only for quoting in the output.
+#
+# Sequences are typed one after another, not held together:
+#   "^X^K"    Ctrl-X, then Ctrl-K.
+#   "^Xu"     Ctrl-X, then plain u.
+#
+# Special key codes (these come from the terminal, not typed by hand):
+#   "^[[A" / "^[OA"   Up arrow      "^[[B" / "^[OB"   Down arrow
+#   "^[[C" / "^[OC"   Right arrow   "^[[D" / "^[OD"   Left arrow
+#   "^[[200~"         Start-of-paste marker (bracketed paste)
+#   Two forms exist because terminals differ between normal and
+#   application cursor mode.
+#
+# Ranges:
+#   " "-"~"           Every printable ASCII char, bound to self-insert.
+#   "\M-^@"-"\M-^?"   All 8-bit Meta chars, bound to self-insert.
+#
+# Upper/lowercase pairs (e.g. "^[B" and "^[b") are bound to the same widget
+# so Alt-b and Alt-Shift-b both work.
+# ---------------------------------------------------------------------------
+alias zmcs="zsh -f -c 'bindkey -M emacs'"
+alias zmc="zsh -f -c 'bindkey -M emacs' | less"
+
 cdf() {
   local dir
   dir="$(find . -mindepth 1 -maxdepth 1 -type d | fzf)" && [[ -n "$dir" ]] && cd "$dir"
